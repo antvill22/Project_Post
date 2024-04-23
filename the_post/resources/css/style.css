@@ -1,0 +1,9 @@
+*{
+    font-family: 'Cardo', "Hind", serif;
+}
+h1,h2,h3,h4{
+    font-family: 'Cardo', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+p,h5{
+    font-family: 'Hind', Tahoma, Geneva, Verdana, sans-serif;
+}
