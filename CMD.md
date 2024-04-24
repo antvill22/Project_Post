@@ -10,6 +10,7 @@
 - name the_post
 - encoding (l'ultima)
 # di nuovo da terminale
+- composer i
 - php artisan migrate
 - npm i
 - npm i bootstrap
