@@ -14,3 +14,6 @@
 - php artisan migrate
 - npm i
 - npm i bootstrap
+# User 1
+- php artisan migrate
+- php artisan storage:link
