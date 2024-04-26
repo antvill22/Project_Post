@@ -46,7 +46,6 @@
                     <div class="mt-2 d-flex justify-content-center">
                         <button type="submit" class="btn btn-info text-white">Inserisci articolo</button>
                     </div>
-
                 </form>
             </div>
         </div>
