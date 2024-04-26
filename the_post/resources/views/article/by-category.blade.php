@@ -12,7 +12,7 @@
 
             @foreach ($articles as $article)
             <div class="col-12 col-md-3">
-                
+
                 <x-card
                 :title="$article->title"
                 :subtitle="$article->subtitle"
@@ -22,6 +22,7 @@
                 :user="$article->user->name"
                 :url="route('article.show', compact('article') )"
                 urlCategory="{{ route('article.byCategory', ['category' => $article->category->id])}}"
+                urlWriter="{{ route('article.byWriter', ['user' => $article->user->id])}}"
                 />
             </div>
             @endforeach

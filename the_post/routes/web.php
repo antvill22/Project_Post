@@ -10,3 +10,4 @@ Route::post('/articles/store', [ArticleController::class, 'store'])->name('artic
 Route::get('/articles/index', [ArticleController::class, 'index'])->name('article.index');
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
+Route::get('/article/writer/{user}', [ArticleController::class, 'byWriter'])->name('article.byWriter');

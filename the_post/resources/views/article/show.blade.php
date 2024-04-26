@@ -17,7 +17,7 @@
                 <img src="{{Storage::url($article->image)}}" alt="" class="img-fluid my-3">
                 <h2>{{$article->subtitle}}</h2>
                 <div class="my-3 text-muted fst-italic">
-                    <p>Redatto da {{$article->user->name}} il {{$article->created_at->format('d/m/Y')}}</p>
+                    <p>Redatto da <a href="{{ route('article.byWriter', ['user' => $article->user->id])}}">{{$article->user->name}}</a> il {{$article->created_at->format('d/m/Y')}}</p>
                 </div>
                 <br>
                 <p>{{ $article->body }}</p>

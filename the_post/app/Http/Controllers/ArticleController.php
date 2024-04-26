@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Article;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -25,6 +26,10 @@ class ArticleController extends Controller
     public function byCategory(Category $category){
         $articles = $category->articles()->orderBy('created_at', 'desc')->get();
         return view('article.by-category', compact('category', 'articles'));
+    }
+    public function byWriter(User $user){
+        $articles = $user->articles()->orderBy('created_at', 'desc')->get();
+        return view('article.by-writer', compact('user', 'articles'));
     }
 
     /**
