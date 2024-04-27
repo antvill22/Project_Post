@@ -19,3 +19,8 @@
 - php artisan storage:link
 # User 3
 - php artisan migrate
+- aggiungere mailtrap https://mailtrap.io/home-> email testing-> my inbox-> smtp settings->integrations-> php-> laravel 9+-> copy-> incolli nell'env al posto dei ripettivi campi: MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=xxxxxxxxxxxxxx
+MAIL_PASSWORD=xxxxxxxxxxxxxx
