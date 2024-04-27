@@ -17,3 +17,5 @@
 # User 1
 - php artisan migrate
 - php artisan storage:link
+# User 3
+- php artisan migrate

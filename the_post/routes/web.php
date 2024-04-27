@@ -11,3 +11,5 @@ Route::get('/articles/index', [ArticleController::class, 'index'])->name('articl
 Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
 Route::get('/article/writer/{user}', [ArticleController::class, 'byWriter'])->name('article.byWriter');
+Route::get('/careers', [PublicController::class, 'careers'])->name('careers');
+Route::post('/careers/submit', [PublicController::class, 'careersSubmit'])->name('careers.submit');

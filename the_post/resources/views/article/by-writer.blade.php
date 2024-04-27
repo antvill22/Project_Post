@@ -28,4 +28,50 @@
             @endforeach
         </div>
     </div>
+    @if ($articles instanceof \Illuminate\Pagination\LengthAwarePaginator)
+        <div class="d-flex justify-content-end my-4 me-3">
+            <div class="pagination">
+                @if ($articles->onFirstPage())
+                    <span class="disabled me-2">&laquo;</span>
+                @else
+                    <a class="me-2" href="{{ $articles->previousPageUrl() }}">&laquo;</a>
+                @endif
+                @php
+                    $currentPage = $articles->currentPage();
+                    $lastPage = $articles->lastPage();
+                    $start = max($currentPage - 2, 1);
+                    $end = min($currentPage + 2, $lastPage);
+                @endphp
+
+                @if ($start > 1)
+                    <a style="color: #2c2c2c;text-decoration:none; " class="mx-1"
+                        href="{{ $articles->url(1) }}">1</a>
+                    @if ($start > 2)
+                        <span class="mx-1">...</span>
+                    @endif
+                @endif
+                @for ($i = $start; $i <= $end; $i++)
+                    @if ($i == $currentPage)
+                        <span class="active mx-3 text-danger">{{ $i }}</span>
+                    @else
+                        <a style="color: #2c2c2c;text-decoration:none; " class="mx-1"
+                            href="{{ $articles->url($i) }}">{{ $i }}</a>
+                    @endif
+                @endfor
+                @if ($end < $lastPage)
+                    @if ($end < $lastPage - 1)
+                        <span class="mx-1">...</span>
+                    @endif
+                    <a style="color: #2c2c2c;text-decoration:none; " class="mx-1"
+                        href="{{ $articles->url($lastPage) }}">{{ $lastPage }}</a>
+                @endif
+                @if ($articles->hasMorePages())
+                    <a style="color: #2c2c2c;text-decoration:none; " class="ms-2"
+                        href="{{ $articles->nextPageUrl() }}">&raquo;</a>
+                @else
+                    <span class="disabled ms-2">&raquo;</span>
+                @endif
+            </div>
+        </div>
+    @endif
 </x-layout>
