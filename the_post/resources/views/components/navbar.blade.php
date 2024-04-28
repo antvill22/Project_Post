@@ -24,6 +24,9 @@
             </a>
             <ul class="dropdown-menu">
               <li class="nav-item">
+                <a class="nav-link" href="{{route('careers')}}">Lavora con noi</a>
+              </li>
+              <li class="nav-item">
                 <form action="{{route('logout')}}" id="logout-form" method="POST">
                   @csrf
                   <button type="submit" class="btn nav-link">Logout</button>
