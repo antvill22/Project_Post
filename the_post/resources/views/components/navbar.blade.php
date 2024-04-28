@@ -7,15 +7,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="{{route('article.create')}}">Inserisci un articolo</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="{{route('article.index')}}">Tutti gli articoli</a>
           </li>
           @auth
+          @if (Auth::user()->is_writer)
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('article.create')}}">Inserisci un articolo</a>
+          </li>
+          @endif
           @if (Auth::user()->is_admin)
           <li class="nav-item">
             <a class="nav-link" href="{{route('admin.dashboard')}}">Dashboard Admin</a>
+          </li>
+          @endif
+          @if (Auth::user()->is_revisor)
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('revisor.dashboard')}}">Dashboard revisore</a>
           </li>
           @endif
           <li class="nav-item dropdown">

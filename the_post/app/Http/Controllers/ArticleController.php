@@ -24,11 +24,11 @@ class ArticleController extends Controller
         return view('article.index',compact('articles'));
     }
     public function byCategory(Category $category){
-        $articles = $category->articles()->orderBy('created_at', 'desc')->get();
+        $articles = $category->articles()->where('is_accepted', true)->orderBy('created_at', 'desc')->get();
         return view('article.by-category', compact('category', 'articles'));
     }
     public function byWriter(User $user){
-        $articles = $user->articles()->orderBy('created_at', 'desc')->get();
+        $articles = $user->articles()->where('is_accepted', true)->orderBy('created_at', 'desc')->get();
         return view('article.by-writer', compact('user', 'articles'));
     }
 

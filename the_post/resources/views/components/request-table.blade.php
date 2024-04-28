@@ -37,9 +37,7 @@
                 </form>
                 @break
                 @endswitch
-                <button class="btn btn-info text-white">Attiva {{$role}}</button>
             </td>
-
         </tr>
         @endforeach
     </tbody>

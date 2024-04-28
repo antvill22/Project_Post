@@ -24,6 +24,11 @@ class AdminController extends Controller
         $user->save();
         return redirect(route('admin.dashboard'))->with('message', "Hai correttamente reso revisore l'utente scelto");
     }
+    public function unsetRevisor(User $user){
+        $user->is_revisor = NULL;
+        $user->save();
+        return redirect(route('admin.dashboard'))->with('message', "Hai correttamente tolto il ruolo di revisore all'utente scelto");
+    }
     public function setWriter(User $user){
         $user->is_writer = true;
         $user->save();

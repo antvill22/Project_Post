@@ -15,7 +15,7 @@ class PublicController extends Controller
         $this->middleware('auth')->except('homepage');
     }
     public function homepage() {
-        $articles = Article::orderby('created_at' , 'desc')->paginate(4);
+        $articles = Article::where('is_accepted', true)->orderby('created_at' , 'desc')->paginate(4);
         return view('welcome', compact('articles'));
     }
     public function careers(){
