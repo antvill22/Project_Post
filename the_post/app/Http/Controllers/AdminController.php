@@ -19,13 +19,18 @@ class AdminController extends Controller
         $user->save();
         return redirect(route('admin.dashboard'))->with('message', "Hai correttamente reso amministratore l'utente scelto");
     }
+    public function unsetAdmin(User $user){
+        $user->is_admin = false;
+        $user->save();
+        return redirect(route('admin.dashboard'))->with('message', "Hai correttamente tolto il ruolo di amministratore l'utente scelto");
+    }
     public function setRevisor(User $user){
         $user->is_revisor = true;
         $user->save();
         return redirect(route('admin.dashboard'))->with('message', "Hai correttamente reso revisore l'utente scelto");
     }
     public function unsetRevisor(User $user){
-        $user->is_revisor = NULL;
+        $user->is_revisor = false;
         $user->save();
         return redirect(route('admin.dashboard'))->with('message', "Hai correttamente tolto il ruolo di revisore all'utente scelto");
     }
@@ -33,5 +38,10 @@ class AdminController extends Controller
         $user->is_writer = true;
         $user->save();
         return redirect(route('admin.dashboard'))->with('message', "Hai correttamente reso redattore l'utente scelto");
+    }
+    public function unsetWriter(User $user){
+        $user->is_writer = false;
+        $user->save();
+        return redirect(route('admin.dashboard'))->with('message', "Hai correttamente tolto il ruolo di redattore all'utente scelto");
     }
 }

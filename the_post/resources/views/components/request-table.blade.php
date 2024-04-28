@@ -21,6 +21,12 @@
                     @method('patch')
                     <button class="btn btn-info text-white">Attiva {{$role}}</button>
                 </form>
+                <br>
+                <form action="{{route('admin.unsetAdmin' , compact('user'))}}" method="POST">
+                    @csrf
+                    @method('patch')
+                    <button class="btn btn-danger text-white">Rifiuta</button>
+                </form>
                 @break
                 @case('revisore')
                 <form action="{{route('admin.setRevisor' , compact('user'))}}" method="POST">
@@ -28,12 +34,24 @@
                     @method('patch')
                     <button class="btn btn-info text-white">Attiva {{$role}}</button>
                 </form>
+                <br>
+                <form action="{{route('admin.unsetRevisor' , compact('user'))}}" method="POST">
+                    @csrf
+                    @method('patch')
+                    <button class="btn btn-danger text-white">Rifiuta</button>
+                </form>
                 @break
                 @case('redattore')
                 <form action="{{route('admin.setWriter' , compact('user'))}}" method="POST">
                     @csrf
                     @method('patch')
                     <button class="btn btn-info text-white">Attiva {{$role}}</button>
+                </form>
+                <br>
+                <form action="{{route('admin.unsetWriter' , compact('user'))}}" method="POST">
+                    @csrf
+                    @method('patch')
+                    <button class="btn btn-danger text-white">Rifiuta</button>
                 </form>
                 @break
                 @endswitch

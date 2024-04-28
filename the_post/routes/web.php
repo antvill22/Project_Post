@@ -17,8 +17,11 @@ Route::post('/careers/submit', [PublicController::class, 'careersSubmit'])->name
 Route::middleware('admin')->group(function(){
     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
     Route::patch('/admin/{user}/set-admin', [AdminController::class, 'setAdmin'])->name('admin.setAdmin');
+    Route::patch('/admin/{user}/unset-admin', [AdminController::class, 'unsetAdmin'])->name('admin.unsetAdmin');
     Route::patch('/admin/{user}/set-revisor', [AdminController::class, 'setRevisor'])->name('admin.setRevisor');
+    Route::patch('/admin/{user}/unset-revisor', [AdminController::class, 'unsetRevisor'])->name('admin.unsetRevisor');
     Route::patch('/admin/{user}/set-writer', [AdminController::class, 'setWriter'])->name('admin.setWriter');
+    Route::patch('/admin/{user}/unset-writer', [AdminController::class, 'unsetWriter'])->name('admin.unsetWriter');
 });
 
 Route::middleware('revisor')->group(function(){
