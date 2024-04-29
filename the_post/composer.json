@@ -10,7 +10,9 @@
         "laravel/fortify": "*",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
-        "laravel/tinker": "^2.8"
+        "laravel/scout": "^10.8",
+        "laravel/tinker": "^2.8",
+        "teamtnt/laravel-scout-tntsearch-driver": "^14.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

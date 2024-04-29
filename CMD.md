@@ -24,3 +24,15 @@ MAIL_HOST=sandbox.smtp.mailtrap.io
 MAIL_PORT=2525
 MAIL_USERNAME=xxxxxxxxxxxxxx
 MAIL_PASSWORD=xxxxxxxxxxxxxx
+
+# User 4
+- aggiungi SCOUT_DRIVER=tntsearch al file .env
+## da terminale
+### per importare gli articoli nella ricerca:
+- php artisan scout:import "App\Models\Article"
+### per resettare:
+- php artisan scout:flush "App\Models\Article"
+### e poi:
+- php artisan scout:import "App\Models\Article"
+### per controllare lo status:
+- php artisan scout:status
