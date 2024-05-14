@@ -21,7 +21,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('created_at' , 'desc')->paginate(4);
+        $articles = Article::where('is_accepted', true)->orderBy('created_at' , 'desc')->paginate(4);
         return view('article.index',compact('articles'));
     }
     public function byCategory(Category $category){
