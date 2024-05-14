@@ -14,6 +14,7 @@
             <div class="col-12 col-md-3">
 
                 <x-card
+                :tags="$article->tags"
                 :title="$article->title"
                 :subtitle="$article->subtitle"
                 :image="$article->image"
