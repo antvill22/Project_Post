@@ -23,6 +23,8 @@ Route::middleware('admin')->group(function(){
     Route::patch('/admin/{user}/unset-revisor', [AdminController::class, 'unsetRevisor'])->name('admin.unsetRevisor');
     Route::patch('/admin/{user}/set-writer', [AdminController::class, 'setWriter'])->name('admin.setWriter');
     Route::patch('/admin/{user}/unset-writer', [AdminController::class, 'unsetWriter'])->name('admin.unsetWriter');
+    Route::put('admin/edit/{tag}/tag',[AdminController::class,'editTag'])->name('admin.editTag');
+    Route::delete('admin/delete/{tag}/tag',[AdminController::class,'deleteTag'])->name('admin.deleteTag');
 });
 
 Route::middleware('revisor')->group(function(){
