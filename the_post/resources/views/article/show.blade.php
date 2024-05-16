@@ -25,7 +25,7 @@
                     <a href="{{route('article.index')}}" class="btn btn-info text-white my-5">Torna indietro</a>
                 </div>
                 <div class="d-flex justify-content-between">
-                    @if (Auth::user() && Auth::user()->is_revisor)
+                    @if (Auth::user() && Auth::user()->is_revisor && $article->is_accepted == NULL)
                     <form action="{{route('revisor.acceptArticle', compact('article'))}}" method="POST">
                     @csrf
                     <button class="btn btn-success text-white">Accetta articolo</button>
