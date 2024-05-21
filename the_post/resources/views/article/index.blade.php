@@ -34,6 +34,7 @@
                 :url="route('article.show', compact('article') )"
 
                 urlWriter="{{ route('article.byWriter', ['user' => $article->user->id])}}"
+                readDuration="{{ $article->readDuration()}}"
                 />
             </div>
             @endforeach

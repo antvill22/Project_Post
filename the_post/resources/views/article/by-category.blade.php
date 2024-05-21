@@ -24,6 +24,7 @@
                 :url="route('article.show', compact('article') )"
                 urlCategory="{{ route('article.byCategory', ['category' => $article->category->id])}}"
                 urlWriter="{{ route('article.byWriter', ['user' => $article->user->id])}}"
+                readDuration="{{ $article->readDuration()}}"
                 />
             </div>
             @endforeach

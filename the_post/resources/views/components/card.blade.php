@@ -10,7 +10,7 @@
             Non categorizzato
         </p>
         @endif
-
+        <span class="text-muted small fst-italic">tempo di lettura {{ $readDuration }}</span>
         @if ($tags)
         <p class="small fst-italic taxt-capitalize">
             @foreach ($tags as $tag)

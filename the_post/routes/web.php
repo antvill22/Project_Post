@@ -9,7 +9,7 @@ use App\Http\Controllers\WriterController;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/articles/index', [ArticleController::class, 'index'])->name('article.index');
-Route::get('/article/show/{article}', [ArticleController::class, 'show'])->name('article.show');
+Route::get('/article/show/{article:slug}', [ArticleController::class, 'show'])->name('article.show');
 Route::get('/article/category/{category}', [ArticleController::class, 'byCategory'])->name('article.byCategory');
 Route::get('/article/writer/{user}', [ArticleController::class, 'byWriter'])->name('article.byWriter');
 Route::get('/careers', [PublicController::class, 'careers'])->name('careers');

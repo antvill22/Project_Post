@@ -37,6 +37,7 @@
                 :category="$varCategory"
                 :urlCategory="$varUrlCategory"
                 urlWriter="{{ route('article.byWriter', ['user' => $article->user->id]) }}"
+                readDuration="{{ $article->readDuration()}}"
                     />
                 </div>
                 @endforeach
