@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RevisorController;
+use App\Http\Controllers\WriterController;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/articles/index', [ArticleController::class, 'index'])->name('article.index');
@@ -40,4 +41,5 @@ Route::middleware('revisor')->group(function(){
 Route::middleware('writer')->group(function(){
     Route::get('/articles/create', [ArticleController::class, 'create'])->name('article.create');
     Route::post('/articles/store', [ArticleController::class, 'store'])->name('article.store');
+    Route::get('/writer/dashboard', [WriterController::class, 'dashboard'])->name('writer.dashboard');
 });
